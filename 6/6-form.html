@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>form</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#acceptTermchkbox").on("change", function () {
+                if ($(this).is(':checked')) {
+                    $("#registerButton").prop('disabled', false);
+                }
+                else {
+                    $("#registerButton").prop('disabled', true);
+
+                }
+            });
+
+            $("#name").on("change", function () {
+
+                var name = $(this).val();
+                if (name === "") {
+
+                    $("#required_name_error").show();
+                }
+                else {
+                    $("#required_name_error").hide();
+
+                }
+            });
+
+            $("#family").on("change", function () {
+
+                var family = $(this).val();
+                if (family === "") {
+
+                    $("#required_family_error").show();
+                }
+                else {
+                    $("#required_family_error").hide();
+
+                }
+            });
+
+            $("#registerButton").click(function () {
+                var name = $("#name").val();
+                var family = $("#family").val();
+                if (name === "" || family === "") {
+
+                    $("#errors").show();
+                }
+                else {
+                    $("#errors").hide();
+                }
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <h2>Register</h2>
+
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" id="name" /></td>
+            <td><span id="required_name_error" style="color:red;">Please Enter your name</span></td>
+        </tr>
+        <tr>
+            <td>Family:</td>
+            <td><input type="text" id="family" /></td>
+            <td><span id="required_family_error" style="color:red;">Please Enter your family</span></td>
+
+        </tr>
+        <tr>
+            <td>Accept the Terms</td>
+            <td><input type="checkbox" id="acceptTermchkbox" value="true" /></td>
+        </tr>
+    </table>
+    <button id="registerButton" disabled="true">Register</button>
+    <span id="errors" style="color:red;">Please Correct the Errors</span>
+
+</body>
+</html>

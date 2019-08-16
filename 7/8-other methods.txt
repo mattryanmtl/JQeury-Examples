@@ -1,0 +1,29 @@
+siblings()
+next()
+nextAll()
+nextUntil()
+prev()
+prevAll()
+prevUntil()
+
+$(document).ready(function(){
+    $("div p").first(); //the first p in div
+});
+
+
+$(document).ready(function(){
+    $("div p").last(); // the last p in div
+});
+
+
+$(document).ready(function(){
+    $("p").eq(1);//index starts at 0
+});
+
+$(document).ready(function(){
+    $("p").filter(".intro"); // all p elements with intro class name
+});
+
+$(document).ready(function(){
+    $("p").not(".intro");//all <p> elements that do not have class name "intro"
+});

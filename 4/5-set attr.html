@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.1.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#w3s").attr({
+            "href" : "http://www.jquery.com/download/",
+            "title" : "jQuery Download page"
+        });
+    });
+});
+</script>
+</head>
+<body>
+
+<p><a href="http://www.jquery.com" title="some title" id="w3s">jquery.com</a></p>
+
+<button>Change href and title</button>
+
+<p>Mouse over the link to see that the href attribute has changed and a title attribute is set.</p>
+
+</body>
+</html>
